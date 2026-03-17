@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "webresearch": {
+      "command": "npx",
+      "args": ["-y", "@mzxrai/mcp-webresearch@latest"]
+    }
+  }
+}
