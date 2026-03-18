@@ -41,7 +41,7 @@ def create_app() -> FastAPI:
     @app.on_event("startup")
     async def startup_event():
         init_db()
-        app_port = os.getenv("APP_PORT", "8001")
+        app_port = os.getenv("APP_PORT", "8000")
         print(f"{settings.APP_NAME} API started")
         print(f"API docs: http://localhost:{app_port}/docs")
 
@@ -57,6 +57,6 @@ if __name__ == "__main__":
     uvicorn.run(
         "app.main:app",
         host=os.getenv("APP_HOST", "0.0.0.0"),
-        port=int(os.getenv("APP_PORT", "8001")),
+        port=int(os.getenv("APP_PORT", "8000")),
         reload=os.getenv("APP_RELOAD", "true").lower() == "true",
     )

@@ -4,7 +4,7 @@
       <div class="header-content">
         <div class="logo">
           <el-icon><Promotion /></el-icon>
-          <span>速速投</span>
+          <span>FastPosition</span>
         </div>
         <el-menu
           :default-active="activeMenu"

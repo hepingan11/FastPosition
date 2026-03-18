@@ -4,7 +4,7 @@
       <template #header>
         <div class="card-header">
           <el-icon class="logo-icon"><Promotion /></el-icon>
-          <span class="title">速速投</span>
+          <span class="title">FastPosition</span>
         </div>
       </template>
       

@@ -59,7 +59,7 @@ router.beforeEach(async (to) => {
     cancelArr.splice(index, 1)
   })
 
-  document.title = (to.meta.title ? to.meta.title : '') + ' - 速速投'
+  document.title = (to.meta.title ? to.meta.title : '') + ' - FastPosition'
 
   const token = localStorage.getItem('token')
   const requiresAuth = to.meta.requiresAuth !== false
