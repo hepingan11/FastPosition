@@ -4,6 +4,14 @@
 
 《FastPosition》是一款智能简历投递平台，旨在解决求职者获取职位信息难、简历定制耗时、投递流程繁琐等痛点。通过结合大模型分析与智能推荐算法，帮助用户快速匹配优质职位，实现一键优化简历并直达投递页面。
 
+求Star支持~
+
+------
+
+**数据爬取流程图：**
+
+![](https://img-hepingan.oss-cn-hangzhou.aliyuncs.com/picgo/20260325012337.png)
+
 ### 核心价值
 - 🚀 **高效投递**：一键直达职位官网投递链接，告别繁琐的注册与填写流程
 - 🧠 **智能分析**：利用大模型解析简历，精准匹配用户技能与职位需求
@@ -44,15 +52,11 @@
 - **LangChain**：大模型应用开发框架
 - **Ollama**：本地大模型部署
 - **MySQL**：关系型数据库
-- **JWT**：用户认证
-- **bcrypt**：密码哈希
 - **pymupdf**：PDF解析
 
 ### 前端
 - **Vue3**：现代化前端框架
 - **Element Plus**：UI组件库
-- **Axios**：HTTP客户端
-- **Vue Router**：路由管理
 
 ### 数据处理
 - **Playwright**：网页爬取
@@ -114,6 +118,7 @@ DEBUG=true
 
 # 数据库配置
 DATABASE_URL=mysql+mysqlconnector://root:123456@localhost:3306/susutou
+数据库sql文件在根目录下的mysql.sql
 
 # Ollama 配置
 OLLAMA_BASE_URL=http://localhost:11434
@@ -154,97 +159,19 @@ npm run dev
 3. **定时更新**：定期同步公司职位数据，保持信息最新
 4. **智能检索**：基于关键词与语义匹配快速查找职位
 
-## API 接口
-
-### 认证接口
-- `POST /auth/register`：用户注册
-- `POST /auth/login`：用户登录
-- `GET /auth/me`：获取当前用户信息
-
-### 简历接口
-- `POST /resume/upload`：上传简历
-- `GET /resume/list`：获取简历列表
-- `DELETE /resume/{id}`：删除简历
-
-### 职位接口
-- `GET /positions/recommend`：获取推荐职位
-- `GET /positions/search`：搜索职位
-
-### 公司链接接口
-- `GET /company-links`：获取公司链接列表
-- `POST /company-links`：添加公司链接
-- `PUT /company-links/{id}`：更新公司链接
-- `DELETE /company-links/{id}`：删除公司链接
-- `POST /company-links/batch-crawl`：批量爬取职位
-
-## 数据库设计
-
-### 核心表结构
-
-#### users（用户表）
-- `id`：主键
-- `username`：用户名
-- `email`：邮箱
-- `hashed_password`：加密密码
-- `create_at`：创建时间
-
-#### resumes（简历表）
-- `id`：主键
-- `user_id`：关联用户ID
-- `file_name`：文件名
-- `content`：简历内容
-- `parsed_info`：解析后的结构化信息
-- `create_at`：创建时间
-
-#### positions（职位表）
-- `id`：主键
-- `name`：职位名称
-- `company`：公司名称
-- `location`：工作地点
-- `salary`：薪资范围
-- `jd`：职位描述
-- `link`：投递链接
-- `source`：数据来源
-- `create_at`：创建时间
-
-#### company_links（公司链接表）
-- `id`：主键
-- `user_id`：关联用户ID
-- `company_name`：公司名称
-- `link`：招聘页面链接
-- `type`：职位类型（校招/实习/社招）
-- `create_at`：创建时间
-
 ## 未来规划
 
-### 短期目标
 - [ ] 支持更多简历格式（DOCX）
 - [ ] 优化职位匹配算法
 - [ ] 增加职位收藏功能
 - [ ] 实现简历模板下载
 
-### 中期目标
 - [ ] 推出AI面试官功能
 - [ ] 增加职位对比功能
 - [ ] 支持多语言简历
 - [ ] 实现简历自动投递
 
-### 长期目标
 - [ ] 构建职业发展分析系统
 - [ ] 对接更多招聘平台
 - [ ] 推出企业版服务
 - [ ] 移动端APP开发
-
-## 贡献指南
-
-欢迎提交Issue和Pull Request！
-
-### 开发规范
-- 后端遵循PEP8规范
-- 前端遵循Vue3官方规范
-- 提交信息使用中文描述
-- 新增功能需编写相应测试
-
-## 许可证
-
-MIT License
